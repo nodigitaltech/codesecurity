@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #DC2626 #000000;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #DC2626;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B91C1C;
+}
+
+/* Animações de Scroll (Substituindo Framer Motion) */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.95) translateX(20px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1) translateX(0);
+}
+
+/* Delays para criar o efeito "stagger" */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/* Animação de pulso lento customizada */
+@keyframes slow-pulse {
+  50% {
+    opacity: .5;
+  }
+}
+.animate-slow-pulse {
+  animation: slow-pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Animação de Rolagem Infinita (Marquee - Integrações) */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 40s linear infinite;
+  will-change: transform;
+}
