@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="overflow-x-hidden">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metodologia — Code Security</title>
+  <meta name="description" content="Metodologia de testes de segurança web — auditoria black box para aplicações públicas, foco em apps gerados com IA.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" type="image/png" sizes="48x48" href="./assets/img/fav.png">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="min-h-screen bg-[#000000] text-[#FFFFFF] selection:bg-[#DC2626] selection:text-white overflow-x-hidden">
+  <!-- Navbar (copiado do index) -->
+  <div class="absolute top-6 left-0 right-0 z-50 flex justify-center px-4 sm:px-6 lg:px-8 pointer-events-none">
+    <nav class="w-full max-w-7xl bg-[#0A0A0A]/90 backdrop-blur-md rounded-md h-16 flex items-center justify-between px-6 sm:px-8 pointer-events-auto transition-all">
+      <div class="flex items-center cursor-pointer">
+        <a href="index.html"><img src="./assets/img/logotipo.png" alt="Code Security" class="h-8 w-auto"></a>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-[#94A3B8] text-sm font-medium">
+        <a href="index.html#servicos" class="hover:text-white transition-colors">Serviços</a>
+        <a href="index.html#como-funciona" class="hover:text-white transition-colors">Como funciona</a>
+        <a href="metodologia.html" class="hover:text-white transition-colors">Metodologia</a>
+        <a href="index.html#planos" class="hover:text-white transition-colors">Planos</a>
+        <a href="index.html#faq" class="hover:text-white transition-colors">FAQ</a>
+      </div>
+
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#" class="text-[#94A3B8] hover:text-white text-sm font-medium transition-colors flex items-center gap-2">
+          <i data-lucide="log-in" class="w-4 h-4"></i>
+          Portal do Cliente
+        </a>
+        <button id="openAuditBtn" class="bg-[#DC2626] hover:bg-[#B91C1C] text-white px-5 py-2.5 rounded-md text-sm font-medium transition-all transform hover:scale-105 flex items-center gap-2">
+          Solicitar Auditoria
+          <i data-lucide="shield-check" class="w-4 h-4"></i>
+        </button>
+      </div>
+      <button class="md:hidden text-[#94A3B8]">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </nav>
+  </div>
+
+  <main class="relative z-10 pt-28">
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-20 lg:pt-16 lg:pb-32">
+      <div class="flex flex-col items-center text-center gap-6">
+        <h1 class="text-2xl md:text-3xl font-semibold tracking-tight leading-[1.05]">Metodologia de Testes — Auditoria Black Box</h1>
+        <p class="text-[#94A3B8] max-w-3xl">Auditoria de aplicações web públicas <strong>em modalidade Black Box</strong>. Testamos a superfície pública sem acesso a código-fonte ou credenciais internas. Foco maior em aplicações geradas com IA e 'vibecoding'.</p>
+
+        <div class="mt-8 w-full grid md:grid-cols-2 gap-6">
+          <div class="p-6 rounded-lg bg-[#0A0A0A] border border-white/5 text-left">
+            <h3 class="text-xl font-semibold mb-3 flex items-center gap-3"><i data-lucide="target" class="w-5 h-5 text-[#DC2626]"></i>Escopo</h3>
+            <ul class="text-[#94A3B8] list-disc list-inside space-y-2 text-sm text-left card-list">
+              <li>Testes apenas em aplicações web públicas (sem autenticação interna ou redes privadas).</li>
+              <li>Modalidade: <strong>Black Box Testing</strong> — sem acesso a código nem informações sensíveis fornecidas pelo cliente.</li>
+              <li>Áreas cobertas: interfaces web, APIs públicas, recursos expostos ao público e integrações visíveis.</li>
+            </ul>
+          </div>
+
+          <div class="p-6 rounded-lg bg-[#0A0A0A] border border-white/5 text-left">
+            <h3 class="text-xl font-semibold mb-3 flex items-center gap-3"><i data-lucide="info" class="w-5 h-5 text-[#DC2626]"></i>Objetivo</h3>
+            <p class="text-[#94A3B8] text-sm text-left card-lead">Identificar brechas que possam ser exploradas por terceiros, priorizando riscos reais que impactem disponibilidade, confidencialidade e integridade dos dados.</p>
+          </div>
+        </div>
+
+        <div class="mt-8 w-full">
+          <h2 class="text-2xl font-semibold mb-4">Técnicas e Vetores Testados</h2>
+          <p class="text-[#94A3B8] mb-4">Testamos uma ampla gama de vetores relevantes para aplicações web, exemplo:</p>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <ul class="bg-[#0A0A0A] p-6 rounded-lg border border-white/5 space-y-3 text-sm text-left card-list">
+              <li>
+                <span class="vector-title">Manipulações HTTP</span>
+                <span class="vector-desc">cabeçalhos, métodos e parâmetros.</span>
+              </li>
+              <li>
+                <span class="vector-title">IDOR</span>
+                <span class="vector-desc">verificações de controle de acesso inseguro em objetos.</span>
+              </li>
+              <li>
+                <span class="vector-title">XSS (Cross-Site Scripting)</span>
+                <span class="vector-desc">vetores refletidos e armazenados.</span>
+              </li>
+              <li>
+                <span class="vector-title">SQLi (Injeção SQL)</span>
+                <span class="vector-desc">pontos de injeção em entradas que interagem com banco de dados.</span>
+              </li>
+            </ul>
+
+            <ul class="bg-[#0A0A0A] p-6 rounded-lg border border-white/5 space-y-3 text-sm text-left card-list">
+              <li>
+                <span class="vector-title">CSRF</span>
+                <span class="vector-desc">verificação de proteção contra requisições forjadas.</span>
+              </li>
+              <li>
+                <span class="vector-title">Autenticação e Sessões</span>
+                <span class="vector-desc">falhas em fluxos de login e gerenciamento de sessão.</span>
+              </li>
+              <li>
+                <span class="vector-title">Exposição de API</span>
+                <span class="vector-desc">endpoints CRUD e controles de acesso.</span>
+              </li>
+              <li>
+                <span class="vector-title">Configurações inseguras</span>
+                <span class="vector-desc">cabeçalhos, CORS, diretórios expostos.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-6">
+            <p class="text-[#94A3B8] text-sm">Observação: a lista acima é exemplificativa — avaliaremos o escopo do projeto e priorizaremos os testes conforme superfície e riscos identificados.</p>
+          </div>
+        </div>
+
+        <div class="mt-10 w-full grid md:grid-cols-2 gap-6">
+          <div class="p-6 rounded-lg bg-[#0A0A0A] border border-white/5 text-left">
+            <h3 class="text-xl font-semibold mb-3 flex items-center gap-3"><i data-lucide="cpu" class="w-5 h-5 text-[#DC2626]"></i>Foco em "vibecoding"</h3>
+            <p class="text-[#94A3B8] text-sm card-lead">Aplicações geradas automaticamente por ferramentas de IA podem apresentar padrões repetitivos e configurações padrão que facilitam a descoberta de vulnerabilidades. Nosso processo contempla:</p>
+            <ul class="text-[#94A3B8] list-disc list-inside mt-3 text-sm space-y-2 card-list">
+              <li>Identificação de bibliotecas/frames usados pela aplicação.</li>
+              <li>Detecção de rotas e endpoints padronizados.</li>
+              <li>Testes direcionados em padrões comuns gerados por frameworks e templates.</li>
+            </ul>
+          </div>
+
+          <div class="p-6 rounded-lg bg-[#0A0A0A] border border-white/5 text-left">
+            <h3 class="text-xl font-semibold mb-3 flex items-center gap-3"><i data-lucide="file-text" class="w-5 h-5 text-[#DC2626]"></i>Entregáveis</h3>
+            <ul class="text-[#94A3B8] list-disc list-inside space-y-2 text-sm card-list">
+              <li>Relatório técnico com evidências (sem PoC executável) e classificação de risco.</li>
+              <li>Resumo executivo para gestores com recomendações de mitigação.</li>
+              <li>Checklist de correções e suporte para validação pós-correção (opcional).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-10 w-full">
+          <h3 class="text-xl font-semibold mb-3 flex items-center gap-3 justify-center"><i data-lucide="clock" class="w-5 h-5 text-[#DC2626]"></i>Processo e Prazo</h3>
+          <ol class="text-[#94A3B8] list-decimal list-inside space-y-2 text-sm">
+            <li>Levantamento de superfície pública e delimitação do escopo.</li>
+            <li>Mapeamento de endpoints e tentativas iniciais de enumeração.</li>
+            <li>Testes técnicos por prioridade de risco.</li>
+            <li>Produção de relatório e reunião de entrega.</li>
+          </ol>
+          <p class="text-[#94A3B8] text-sm mt-3">Prazos variam conforme escopo; normalmente 5–15 dias úteis para projetos típicos (escopo médio).</p>
+        </div>
+
+        <div class="mt-10 w-full text-center">
+          <a href="#" id="openAuditBtn" class="inline-flex bg-[#DC2626] hover:bg-[#B91C1C] text-white px-6 py-3 rounded-md font-medium">Solicitar Auditoria</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (copiado do index) -->
+  <footer class="border-t border-white/5 bg-[#000000] pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center mb-4">
+            <img src="./assets/img/logotipo.png" alt="Code Security" class="h-8 w-auto">
+          </div>
+          <p class="text-[#94A3B8] text-sm font-light leading-relaxed">
+            Segurança Ofensiva.<br/> Auditoria guiada por Inteligência e Especialistas.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-medium text-white mb-4">Serviços</h4>
+          <ul class="space-y-3 text-sm text-[#94A3B8]">
+            <li><a href="index.html#servicos" class="hover:text-[#F87171] transition-colors">Pentest Web</a></li>
+            <li><a href="index.html#planos" class="hover:text-[#F87171] transition-colors">Planos</a></li>
+            <li><a href="index.html#roadmap" class="hover:text-[#F87171] transition-colors">Roadmap</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-medium text-white mb-4">Empresa</h4>
+          <ul class="space-y-3 text-sm text-[#94A3B8]">
+            <li><a href="#" class="hover:text-[#F87171] transition-colors">Sobre</a></li>
+            <li><a href="#" class="hover:text-[#F87171] transition-colors">Blog</a></li>
+            <li><a href="#" class="hover:text-[#F87171] transition-colors">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-medium text-white mb-4">Suporte</h4>
+          <ul class="space-y-3 text-sm text-[#94A3B8]">
+            <li><a href="index.html#faq" class="hover:text-[#F87171] transition-colors">FAQ</a></li>
+            <li><a href="#" class="hover:text-[#F87171] transition-colors">Termos de uso</a></li>
+            <li><a href="#" class="hover:text-[#F87171] transition-colors">Privacidade</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-[#94A3B8] font-light">
+        <p>© 2026 Code Security. Todos os direitos reservados.</p>
+        <div class="flex items-center gap-4 mt-4 md:mt-0">
+          <span class="w-2 h-2 rounded-full bg-green-500"></span> Nosso site não coleta seus dados.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Solicitar Auditoria (mesmo do index) -->
+  <div id="auditModal" class="hidden fixed inset-0 z-50 items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="auditModalTitle">
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" data-modal-close></div>
+    <div class="relative z-10 w-full max-w-xl mx-auto modal-card bg-[#070707] border border-white/5 rounded-xl shadow-2xl p-6">
+      <button type="button" class="absolute top-4 right-4 text-[#94A3B8] hover:text-white" data-modal-close aria-label="Fechar modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <h3 id="auditModalTitle" class="text-xl font-semibold text-white mb-2">Solicitar Auditoria</h3>
+      <p class="text-[#94A3B8] text-sm mb-4">deixe a sua mensagem que entraremos em contato !</p>
+
+      <form id="auditForm" action="mailto:andre@codesecurity.com.br" method="post" enctype="text/plain" target="_blank" class="space-y-4" novalidate>
+        <div>
+          <label class="text-sm text-[#94A3B8] block mb-1">Nome</label>
+          <input name="Nome" type="text" required class="modal-input" placeholder="Seu nome completo">
+        </div>
+        <div>
+          <label class="text-sm text-[#94A3B8] block mb-1">E-mail</label>
+          <input name="E-mail" type="email" required class="modal-input" placeholder="seu@exemplo.com">
+        </div>
+        <div>
+          <label class="text-sm text-[#94A3B8] block mb-1">Mensagem</label>
+          <textarea name="Mensagem" required class="modal-textarea" placeholder="Descreva brevemente o escopo da auditoria..."></textarea>
+        </div>
+        <div class="flex items-center justify-end gap-3">
+          <button type="button" data-modal-close class="px-4 py-2 rounded-md border border-white/6 text-[#94A3B8] hover:text-white">Fechar</button>
+          <button type="submit" class="modal-submit">Enviar mensagem...</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>

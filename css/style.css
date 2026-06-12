@@ -1,14 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/satoshi');
 
+/* Base typography: Satoshi (various weights). Keep structure and colors. */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Satoshi', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
   overflow-x: hidden;
   width: 100%;
+  letter-spacing: 0.01em;
+  line-height: 1.55;
 }
 
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+
+:root{
+  --satoshi-regular: 400;
+  --satoshi-medium: 500;
+  --satoshi-semibold: 600;
+  --satoshi-bold: 700;
 }
 
 /* Custom Scrollbar */
@@ -37,6 +48,14 @@ html {
   transform: translateY(20px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
+
+/* Typographic adjustments to avoid 'AI' aesthetic */
+h1,h2,h3,h4,h5,strong{ font-weight: var(--satoshi-bold); letter-spacing: -0.01em; }
+nav, .text-sm, p, .text-[#94A3B8]{ font-weight: var(--satoshi-medium); }
+button, .modal-submit, .bg-[#DC2626]{ font-weight: var(--satoshi-semibold); }
+
+/* Slightly warmer letter-spacing on small text to feel more human */
+.text-sm, p, li, .text-[#94A3B8]{ letter-spacing: 0.02em; }
 
 .scale-in {
   opacity: 0;
@@ -130,3 +149,29 @@ html {
 @media (max-width: 640px) {
   .modal-card { margin: 0 1rem; width: auto; }
 }
+
+/* Card improvements for metodologia page */
+.card-lead {
+  font-size: 0.98rem;
+  color: #c7cdd4;
+  margin-bottom: 0.6rem;
+}
+
+.card-list li {
+  background: rgba(255,255,255,0.02);
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+@media (min-width: 768px) {
+  .card-list li { padding: 0.7rem 0.9rem; }
+}
+
+/* Vector item formatting */
+.card-list li { display: block; }
+.card-list .vector-title { display: block; font-weight: 600; color: #FFFFFF; margin-bottom: 0.25rem; }
+.card-list .vector-desc { display: block; color: #94A3B8; font-size: 0. ninerem; margin-left: 0.15rem; }
+.card-list .vector-title { font-weight: var(--satoshi-medium); font-size: 0.95rem; }
+.card-list .vector-desc { font-weight: var(--satoshi-medium); font-size: 0. ninerem; }
+.card-list li + li { margin-top: 0.5rem; }

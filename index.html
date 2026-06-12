@@ -43,10 +43,10 @@
         <img src="./assets/img/logotipo.png" alt="Code Security" class="h-8 w-auto">
       </div>
       
-      <div class="hidden md:flex items-center gap-8 text-[#94A3B8] text-sm font-medium">
+        <div class="hidden md:flex items-center gap-8 text-[#94A3B8] text-sm font-medium">
         <a href="#servicos" class="hover:text-white transition-colors">Serviços</a>
         <a href="#como-funciona" class="hover:text-white transition-colors">Como funciona</a>
-        <a href="#metodologia" class="hover:text-white transition-colors">Metodologia</a>
+        <a href="metodologia.html" class="hover:text-white transition-colors">Metodologia</a>
         <a href="#planos" class="hover:text-white transition-colors">Planos</a>
         <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
       </div>
@@ -97,9 +97,9 @@
               Solicitar Auditoria
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
-            <button class="border border-white/10 hover:bg-white/5 text-white px-8 py-3 text-sm rounded-md font-medium transition-all flex items-center justify-center">
+            <a href="metodologia.html" class="border border-white/10 hover:bg-white/5 text-white px-8 py-3 text-sm rounded-md font-medium transition-all flex items-center justify-center">
               Conhecer Metodologia
-            </button>
+            </a>
           </div>
         </div>
 
@@ -309,84 +309,66 @@
           <p class="text-[#94A3B8] font-light text-lg">Escolha o escopo ideal para a maturidade de segurança da sua aplicação.</p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          
-          <!-- Plano Essencial -->
-          <div class="animate-on-scroll delay-100 flex flex-col p-8 md:p-10 rounded-3xl bg-[#0A0A0A] border border-white/5 hover:border-white/10 transition-all relative">
-            <h3 class="text-xl font-medium text-white mb-2">Análise de Vulnerabilidade</h3>
-            <p class="text-[#94A3B8] text-sm mb-6 font-light">Para pequenas e médias aplicações que buscam uma visão geral de segurança.</p>
-            
-            <div class="flex items-baseline gap-1 mb-8">
-              <span class="text-3xl md:text-4xl font-semibold text-white">Sob Consulta</span>
+        <div class="grid max-w-4xl mx-auto">
+          <div class="animate-on-scroll delay-100 relative overflow-hidden p-6 md:p-8 rounded-2xl bg-gradient-to-b from-[#080808] via-[#070707] to-[#050505] border border-white/6 shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+            <div class="flex items-start md:items-center justify-between gap-6 mb-4">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-lg bg-[#111111] border border-white/5 flex items-center justify-center">
+                  <i data-lucide="shield" class="w-6 h-6 text-[#DC2626]"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold text-white leading-tight">Análise de Vulnerabilidade</h3>
+                  <div class="text-sm text-[#94A3B8] mt-1 mb-6">Para pequenas e médias aplicações que buscam uma visão prática e focada de segurança.</div>
+                </div>
+              </div>
+              <div class="hidden sm:flex items-center gap-3">
+                <span class="text-xs uppercase tracking-wider font-semibold text-[#DC2626] bg-[#2a0f0f]/20 px-3 py-1 rounded-full">Sob Consulta</span>
+              </div>
             </div>
-            
-            <ul class="flex-1 space-y-4 mb-8">
-              <li class="flex items-center gap-3">
-                <i data-lucide="check" class="w-5 h-5 text-[#DC2626] flex-shrink-0"></i>
-                <span class="text-[#94A3B8] text-sm font-light">Varredura automatizada completa</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <i data-lucide="check" class="w-5 h-5 text-[#DC2626] flex-shrink-0"></i>
-                <span class="text-[#94A3B8] text-sm font-light">Verificação OWASP Top 10</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <i data-lucide="check" class="w-5 h-5 text-[#DC2626] flex-shrink-0"></i>
-                <span class="text-[#94A3B8] text-sm font-light">Relatório técnico com mitigações</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <i data-lucide="check" class="w-5 h-5 text-[#DC2626] flex-shrink-0"></i>
-                <span class="text-[#94A3B8] text-sm font-light">Suporte via ticket/e-mail</span>
-              </li>
-            </ul>
 
-            <button class="w-full border border-white/10 hover:bg-white/5 text-white px-8 py-3 text-sm rounded-md font-medium transition-all">
-              Solicitar Orçamento
-            </button>
+            <div class="grid sm:grid-cols-2 gap-3 mb-6">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-[#111111] flex items-center justify-center border border-white/5">
+                  <i data-lucide="check" class="w-4 h-4 text-[#DC2626]"></i>
+                </div>
+                <div class="text-sm text-[#94A3B8]">Análise de vulnerabilidades</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-[#111111] flex items-center justify-center border border-white/5">
+                  <i data-lucide="check" class="w-4 h-4 text-[#DC2626]"></i>
+                </div>
+                <div class="text-sm text-[#94A3B8]">Exploração manual</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-[#111111] flex items-center justify-center border border-white/5">
+                  <i data-lucide="check" class="w-4 h-4 text-[#DC2626]"></i>
+                </div>
+                <div class="text-sm text-[#94A3B8]">Regra de negócios</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-[#111111] flex items-center justify-center border border-white/5">
+                  <i data-lucide="check" class="w-4 h-4 text-[#DC2626]"></i>
+                </div>
+                <div class="text-sm text-[#94A3B8]">Varredura automatizada com IA</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-[#111111] flex items-center justify-center border border-white/5">
+                  <i data-lucide="check" class="w-4 h-4 text-[#DC2626]"></i>
+                </div>
+                <div class="text-sm text-[#94A3B8]">Relatório técnico</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-[#111111] flex items-center justify-center border border-white/5">
+                  <i data-lucide="check" class="w-4 h-4 text-[#DC2626]"></i>
+                </div>
+                <div class="text-sm text-[#94A3B8]">Suporte e checklist de correções</div>
+              </div>
+            </div>
+
+            <div class="w-full">
+              <button class="w-full inline-flex items-center justify-center gap-3 bg-[#DC2626] hover:bg-[#B91C1C] text-white px-6 py-3 rounded-md font-semibold transition-shadow shadow-[0_8px_30px_rgba(220,38,38,0.18)]">Solicite contato</button>
+            </div>
           </div>
-
-          <!-- Plano Pró -->
-          <div class="animate-on-scroll delay-200 flex flex-col p-8 md:p-10 rounded-3xl bg-[#0A0A0A] border border-[#DC2626]/50 shadow-[0_0_30px_-10px_rgba(220,38,38,0.2)] hover:shadow-[0_0_30px_-10px_rgba(220,38,38,0.4)] transition-all relative overflow-hidden">
-            
-            <!-- Badge Destaque -->
-            <div class="absolute top-0 right-0 bg-[#DC2626] text-white text-[10px] font-bold px-4 py-1.5 uppercase tracking-wider rounded-bl-xl">
-              Recomendado
-            </div>
-
-            <h3 class="text-xl font-medium text-white mb-2">Pentest Completo</h3>
-            <p class="text-[#94A3B8] text-sm mb-6 font-light">Testes rigorosos e manuais para aplicações web críticas e corporativas.</p>
-            
-            <div class="flex items-baseline gap-1 mb-8">
-              <span class="text-3xl md:text-4xl font-semibold text-white">Sob Consulta</span>
-            </div>
-            
-            <ul class="flex-1 space-y-4 mb-8">
-              <li class="flex items-center gap-3">
-                <i data-lucide="check" class="w-5 h-5 text-[#DC2626] flex-shrink-0"></i>
-                <span class="text-white text-sm font-medium">Tudo da Análise de Vulnerabilidade</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <i data-lucide="check" class="w-5 h-5 text-[#DC2626] flex-shrink-0"></i>
-                <span class="text-white text-sm font-medium">Exploração manual profunda (Web Hacking)</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <i data-lucide="check" class="w-5 h-5 text-[#DC2626] flex-shrink-0"></i>
-                <span class="text-[#94A3B8] text-sm font-light">Análise avançada de regras de negócio</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <i data-lucide="check" class="w-5 h-5 text-[#DC2626] flex-shrink-0"></i>
-                <span class="text-[#94A3B8] text-sm font-light">Re-teste garantido após correções (90 dias)</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <i data-lucide="check" class="w-5 h-5 text-[#DC2626] flex-shrink-0"></i>
-                <span class="text-[#94A3B8] text-sm font-light">Consultoria direta em reuniões com especialistas</span>
-              </li>
-            </ul>
-
-            <button class="w-full bg-[#DC2626] hover:bg-[#B91C1C] text-white px-8 py-3 text-sm rounded-md font-medium transition-all">
-              Agendar Reunião
-            </button>
-          </div>
-
         </div>
       </div>
     </section>
