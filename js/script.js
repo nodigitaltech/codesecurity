@@ -66,4 +66,54 @@ document.addEventListener("DOMContentLoaded", () => {
       behavior: 'smooth'
     });
   });
+
+  // Modal: Solicitar Auditoria
+  const openAuditBtn = document.getElementById('openAuditBtn');
+  const auditModal = document.getElementById('auditModal');
+  const auditForm = document.getElementById('auditForm');
+
+  function openModal() {
+    if (!auditModal) return;
+    auditModal.classList.remove('hidden');
+    auditModal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+    const firstInput = auditModal.querySelector('input[name="Nome"]');
+    if (firstInput) firstInput.focus();
+  }
+
+  function closeModal() {
+    if (!auditModal) return;
+    auditModal.classList.add('hidden');
+    auditModal.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  openAuditBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    openModal();
+  });
+
+  // Close elements (backdrop + buttons)
+  auditModal?.querySelectorAll('[data-modal-close]').forEach(el => {
+    el.addEventListener('click', () => closeModal());
+  });
+
+  // Close on backdrop click
+  auditModal?.addEventListener('click', (e) => {
+    if (e.target === auditModal) closeModal();
+  });
+
+  // Close on ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && auditModal && !auditModal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+
+  // Form submit: mailto fallback (opens client). Close modal after submit.
+  auditForm?.addEventListener('submit', () => {
+    setTimeout(() => {
+      try { closeModal(); } catch (err) { /* ignore */ }
+    }, 300);
+  });
 });

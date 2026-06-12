@@ -93,7 +93,7 @@
           </p>
           
           <div class="animate-on-scroll delay-400 flex flex-col sm:flex-row gap-4 mt-6">
-            <button class="bg-[#DC2626] hover:bg-[#B91C1C] text-white px-8 py-3 text-sm rounded-md font-medium transition-all flex items-center justify-center gap-2">
+            <button id="openAuditBtn" class="bg-[#DC2626] hover:bg-[#B91C1C] text-white px-8 py-3 text-sm rounded-md font-medium transition-all flex items-center justify-center gap-2" aria-haspopup="dialog">
               Solicitar Auditoria
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
@@ -135,7 +135,7 @@
                 <i data-lucide="search" class="w-6 h-6 text-[#DC2626] flex-shrink-0"></i>
                 <h3 class="text-base font-semibold leading-tight">Análise Profunda</h3>
               </div>
-              <p class="text-[#94A3B8] text-sm leading-relaxed font-light">Identificamos falhas críticas antes que invasores as explorem.</p>
+              <p class="text-[#94A3B8] text-sm leading-relaxed font-light">Identificamos superfícies de ataque disponíveis na internet.</p>
             </div>
           </div>
           
@@ -143,9 +143,9 @@
             <div class="relative z-10">
               <div class="flex items-center gap-3 mb-3">
                 <i data-lucide="shield-check" class="w-6 h-6 text-[#DC2626] flex-shrink-0"></i>
-                <h3 class="text-base font-semibold leading-tight">Prevenção</h3>
+                <h3 class="text-base font-semibold leading-tight">Classificação</h3>
               </div>
-              <p class="text-[#94A3B8] text-sm leading-relaxed font-light">Proteção ativa contra ataques OWASP Top 10 e Zero-Days.</p>
+              <p class="text-[#94A3B8] text-sm leading-relaxed font-light">Separamos aplicações críticas para análise de segurança.</p>
             </div>
           </div>
 
@@ -155,7 +155,7 @@
                 <i data-lucide="terminal" class="w-6 h-6 text-[#DC2626] flex-shrink-0"></i>
                 <h3 class="text-base font-semibold leading-tight">Web Hacking</h3>
               </div>
-              <p class="text-[#94A3B8] text-sm leading-relaxed font-light">Testes manuais precisos simulando cenários reais de intrusão.</p>
+              <p class="text-[#94A3B8] text-sm leading-relaxed font-light">Realizamos testes manuais precisos simulando cenários reais de intrusão.</p>
             </div>
           </div>
 
@@ -165,7 +165,7 @@
                 <i data-lucide="file-check-2" class="w-6 h-6 text-[#DC2626] flex-shrink-0"></i>
                 <h3 class="text-base font-semibold leading-tight">Relatórios Claros</h3>
               </div>
-              <p class="text-[#94A3B8] text-sm leading-relaxed font-light">Documentação detalhada e plano de ação para mitigações rápidas.</p>
+              <p class="text-[#94A3B8] text-sm leading-relaxed font-light">Entregamos uma documentação detalhada e plano de ação para mitigações rápidas.</p>
             </div>
           </div>
 
@@ -672,6 +672,42 @@
   <button id="backToTopBtn" aria-label="Voltar ao topo" class="fixed bottom-8 right-8 z-50 bg-[#DC2626] hover:bg-[#B91C1C] text-white p-3 rounded-full shadow-[0_0_20px_-5px_rgba(220,38,38,0.5)] opacity-0 pointer-events-none translate-y-4 transition-all duration-300 flex items-center justify-center">
     <i data-lucide="arrow-up" class="w-5 h-5"></i>
   </button>
+
+  <!-- Modal Solicitar Auditoria -->
+  <div id="auditModal" class="hidden fixed inset-0 z-50 items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="auditModalTitle">
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" data-modal-close></div>
+
+    <div class="relative z-10 w-full max-w-xl mx-auto modal-card bg-[#070707] border border-white/5 rounded-xl shadow-2xl p-6">
+      <button type="button" class="absolute top-4 right-4 text-[#94A3B8] hover:text-white" data-modal-close aria-label="Fechar modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <h3 id="auditModalTitle" class="text-xl font-semibold text-white mb-2">Solicitar Auditoria</h3>
+      <p class="text-[#94A3B8] text-sm mb-4">deixe a sua mensagem que entraremos em contato !</p>
+
+      <form id="auditForm" action="mailto:andre@codesecurity.com.br" method="post" enctype="text/plain" target="_blank" class="space-y-4" novalidate>
+        <div>
+          <label class="text-sm text-[#94A3B8] block mb-1">Nome</label>
+          <input name="Nome" type="text" required class="modal-input" placeholder="Seu nome completo">
+        </div>
+
+        <div>
+          <label class="text-sm text-[#94A3B8] block mb-1">E-mail</label>
+          <input name="E-mail" type="email" required class="modal-input" placeholder="seu@exemplo.com">
+        </div>
+
+        <div>
+          <label class="text-sm text-[#94A3B8] block mb-1">Mensagem</label>
+          <textarea name="Mensagem" required class="modal-textarea" placeholder="Descreva brevemente o escopo da auditoria..."></textarea>
+        </div>
+
+        <div class="flex items-center justify-end gap-3">
+          <button type="button" data-modal-close class="px-4 py-2 rounded-md border border-white/6 text-[#94A3B8] hover:text-white">Fechar</button>
+          <button type="submit" class="modal-submit">Enviar mensagem...</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <script src="./js/script.js"></script>
 </body>

@@ -85,3 +85,48 @@ html {
   animation: marquee-reverse 40s linear infinite;
   will-change: transform;
 }
+
+/* Modal styles */
+.modal-card {
+  background: #070707;
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.modal-input,
+.modal-textarea {
+  width: 100%;
+  background: #0A0A0A;
+  border: 1px solid rgba(255,255,255,0.06);
+  color: #FFFFFF;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.modal-textarea { min-height: 120px; resize: vertical; }
+
+/* Focus states: borda mais fina e vermelho escuro, discreto */
+.modal-input:focus,
+.modal-textarea:focus {
+  outline: none;
+  border: 0.8px solid #7f1a1a; /* vermelho escuro e mais fino */
+  box-shadow: 0 0 0 6px rgba(220,38,38,0.05); /* ring sutil */
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  caret-color: #DC2626;
+}
+
+.modal-submit {
+  background: #DC2626;
+  color: #FFFFFF;
+  padding: 0.65rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+}
+
+@media (max-width: 640px) {
+  .modal-card { margin: 0 1rem; width: auto; }
+}
