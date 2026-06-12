@@ -44,11 +44,11 @@
       </div>
       
         <div class="hidden md:flex items-center gap-8 text-[#94A3B8] text-sm font-medium">
+        <a href="index.html" class="hover:text-white transition-colors">Início</a>
         <a href="#servicos" class="hover:text-white transition-colors">Serviços</a>
         <a href="#como-funciona" class="hover:text-white transition-colors">Como funciona</a>
         <a href="metodologia.html" class="hover:text-white transition-colors">Metodologia</a>
-        <a href="#planos" class="hover:text-white transition-colors">Planos</a>
-        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+        <a href="#" data-open-dev class="hover:text-white transition-colors">Ferramentas</a>
       </div>
 
       <div class="hidden md:flex items-center gap-6">
@@ -56,8 +56,8 @@
           <i data-lucide="log-in" class="w-4 h-4"></i>
           Portal do Cliente
         </a>
-        <button class="bg-[#DC2626] hover:bg-[#B91C1C] text-white px-5 py-2.5 rounded-md text-sm font-medium transition-all transform hover:scale-105 flex items-center gap-2">
-          Falar com Especialista
+        <button data-open-audit data-open-contact class="bg-[#DC2626] hover:bg-[#B91C1C] text-white px-5 py-2.5 rounded-md text-sm font-medium transition-all transform hover:scale-105 flex items-center gap-2">
+          Entrar em contato
           <i data-lucide="shield-check" class="w-4 h-4"></i>
         </button>
       </div>
@@ -89,7 +89,7 @@
           </h1>
           
           <p class="animate-on-scroll delay-300 text-lg text-[#94A3B8] max-w-2xl leading-relaxed font-light">
-            A Code Security realiza testes rigorosos de segurança em aplicações web, identificando vulnerabilidades antes que atacantes maliciosos as explorem.
+            Realizamos testes rigorosos de segurança em aplicações web, identificando vulnerabilidades antes que atacantes maliciosos as explorem.
           </p>
           
           <div class="animate-on-scroll delay-400 flex flex-col sm:flex-row gap-4 mt-6">
@@ -103,17 +103,26 @@
           </div>
         </div>
 
-        <!-- Mockup Dashboard -->
+        <!-- Perfil / Sobre -->
         <div class="scale-in delay-300 relative w-full max-w-6xl mt-16 lg:mt-24">
-          <div class="grid grid-cols-6 gap-4">
-            <!-- Imagens Maiores (Topo) -->
-            <img src="./assets/img/dashboard.png" alt="Relatório Code Security" class="col-span-6 lg:col-span-3 w-full h-auto rounded-lg border border-white/10 shadow-lg object-cover">
-            <img src="./assets/img/relatorios.png" alt="Dashboard de Vulnerabilidades" class="col-span-6 lg:col-span-3 w-full h-auto rounded-lg border border-white/10 shadow-lg object-cover">
-            
-            <!-- Imagens Menores (Abaixo) -->
-            <img src="./assets/img/clientes.png" alt="Painel de Segurança" class="col-span-6 lg:col-span-2 w-full h-auto rounded-lg border border-white/10 shadow-lg object-cover">
-            <img src="./assets/img/relatorios.png" alt="Métricas de Risco" class="col-span-6 lg:col-span-2 w-full h-auto rounded-lg border border-white/10 shadow-lg object-cover">
-            <img src="./assets/img/saldo.png" alt="Status de Auditoria" class="col-span-6 lg:col-span-2 w-full h-auto rounded-lg border border-white/10 shadow-lg object-cover">
+          <div class="bg-[#000000] border border-white/5 rounded-2xl p-6 md:p-8 shadow-lg flex flex-col md:flex-row items-center gap-6">
+            <img src="./assets/img/perfil.png" alt="Perfil" class="w-36 h-36 md:w-44 md:h-44 rounded-full object-cover border border-white/6 shadow-sm">
+
+            <div class="text-center md:text-left flex-1">
+              <h3 class="text-2xl md:text-3xl font-semibold text-white">Web Hacking</h3>
+              <p class="text-[#94A3B8] mt-3 max-w-2xl">Me chamo André Lima, sou hacker ético. Atuo como <strong>Red Team</strong> (profissional de segurança ofensiva), com foco em aplicações web. Ajudo empresas a identificar vulnerabilidades, priorizar riscos e corrigir problemas de segurança das suas aplicações.</p>
+
+              <div class="mt-6 flex items-center gap-8 justify-center md:justify-start">
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-white">+X</div>
+                  <div class="text-sm text-[#94A3B8]">empresas atendidas</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-white">10+</div>
+                  <div class="text-sm text-[#94A3B8]">anos de experiência em tecnologia</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -192,8 +201,8 @@
                   <i data-lucide="scan-line" class="w-6 h-6 text-[#DC2626]"></i>
                 </div>
                 <div>
-                  <h4 class="text-lg font-semibold mb-1">Pentest em Aplicações Web</h4>
-                  <p class="text-[#94A3B8] font-light text-sm">Simulação de ataques direcionados para atestar a resiliência das suas plataformas.</p>
+                  <h4 class="text-lg font-semibold mb-1">Open Source Inteligence - OSINT</h4>
+                  <p class="text-[#94A3B8] font-light text-sm">Catalogamos informações disponíveis através de fontes abertas.</p>
                 </div>
               </div>
 
@@ -202,8 +211,8 @@
                   <i data-lucide="code-2" class="w-6 h-6 text-[#DC2626]"></i>
                 </div>
                 <div>
-                  <h4 class="text-lg font-semibold mb-1">Auditoria de Código Fonte</h4>
-                  <p class="text-[#94A3B8] font-light text-sm">Análise estática (SAST) e revisão manual para encontrar falhas estruturais graves.</p>
+                  <h4 class="text-lg font-semibold mb-1">Exploração de Vulnerabilidades</h4>
+                  <p class="text-[#94A3B8] font-light text-sm">Realizamos testes ativos e testes passivos com autorização prévia.</p>
                 </div>
               </div>
 
@@ -223,7 +232,7 @@
                 </div>
                 <div>
                   <h4 class="text-lg font-semibold mb-1">Consultoria de Remediação</h4>
-                  <p class="text-[#94A3B8] font-light text-sm">Acompanhamento e suporte técnico direto para os desenvolvedores na aplicação das correções.</p>
+                  <p class="text-[#94A3B8] font-light text-sm">Realizamos uma Call de Consultoria para orientar sobre as correções necessárias.</p>
                 </div>
               </div>
 
@@ -366,7 +375,7 @@
             </div>
 
             <div class="w-full">
-              <button class="w-full inline-flex items-center justify-center gap-3 bg-[#DC2626] hover:bg-[#B91C1C] text-white px-6 py-3 rounded-md font-semibold transition-shadow shadow-[0_8px_30px_rgba(220,38,38,0.18)]">Solicite contato</button>
+              <button data-open-audit class="w-full inline-flex items-center justify-center gap-3 bg-[#DC2626] hover:bg-[#B91C1C] text-white px-6 py-3 rounded-md font-semibold transition-shadow shadow-[0_8px_30px_rgba(220,38,38,0.18)]">Solicite contato</button>
             </div>
           </div>
         </div>
@@ -616,17 +625,14 @@
           <h4 class="font-medium text-white mb-4">Serviços</h4>
           <ul class="space-y-3 text-sm text-[#94A3B8]">
             <li><a href="#" class="hover:text-[#F87171] transition-colors">Pentest Web</a></li>
-            <li><a href="#" class="hover:text-[#F87171] transition-colors">Planos</a></li>
-            <li><a href="#" class="hover:text-[#F87171] transition-colors">Roadmap</a></li>
           </ul>
         </div>
         
         <div>
-          <h4 class="font-medium text-white mb-4">Empresa</h4>
+          <h4 class="font-medium text-white mb-4">Mais sobre</h4>
           <ul class="space-y-3 text-sm text-[#94A3B8]">
-            <li><a href="#" class="hover:text-[#F87171] transition-colors">Sobre</a></li>
-            <li><a href="#" class="hover:text-[#F87171] transition-colors">Blog</a></li>
-            <li><a href="#" class="hover:text-[#F87171] transition-colors">Contato</a></li>
+            <li><a href="https://www.youtube.com/" target="_blank" rel="noopener" class="hover:text-[#F87171] transition-colors">Canal no YouTube</a></li>
+            <li><a href="mailto:contato@codesecurity.com.br" class="hover:text-[#F87171] transition-colors">contato@codesecurity.com.br</a></li>
           </ul>
         </div>
         
@@ -665,22 +671,25 @@
       </button>
 
       <h3 id="auditModalTitle" class="text-xl font-semibold text-white mb-2">Solicitar Auditoria</h3>
-      <p class="text-[#94A3B8] text-sm mb-4">deixe a sua mensagem que entraremos em contato !</p>
+      <p id="auditModalDesc" class="text-[#94A3B8] text-sm mb-4">Deixe a sua mensagem que entraremos em contato.</p>
 
-      <form id="auditForm" action="mailto:andre@codesecurity.com.br" method="post" enctype="text/plain" target="_blank" class="space-y-4" novalidate>
+      <form id="auditForm" class="space-y-4" novalidate>
         <div>
-          <label class="text-sm text-[#94A3B8] block mb-1">Nome</label>
-          <input name="Nome" type="text" required class="modal-input" placeholder="Seu nome completo">
+          <label class="text-sm text-[#94A3B8] block mb-1" for="auditName">Nome</label>
+          <input id="auditName" name="Nome" type="text" required class="modal-input" placeholder="Seu nome completo">
+          <p id="errorAuditName" class="field-error hidden text-sm mt-2" aria-live="polite"></p>
         </div>
 
         <div>
-          <label class="text-sm text-[#94A3B8] block mb-1">E-mail</label>
-          <input name="E-mail" type="email" required class="modal-input" placeholder="seu@exemplo.com">
+          <label class="text-sm text-[#94A3B8] block mb-1" for="auditEmail">E-mail</label>
+          <input id="auditEmail" name="E-mail" type="email" required class="modal-input" placeholder="seu@email.com">
+          <p id="errorAuditEmail" class="field-error hidden text-sm mt-2" aria-live="polite"></p>
         </div>
 
         <div>
-          <label class="text-sm text-[#94A3B8] block mb-1">Mensagem</label>
-          <textarea name="Mensagem" required class="modal-textarea" placeholder="Descreva brevemente o escopo da auditoria..."></textarea>
+          <label class="text-sm text-[#94A3B8] block mb-1" for="auditMessage">Mensagem</label>
+          <textarea id="auditMessage" name="Mensagem" required class="modal-textarea" placeholder="Descreva brevemente o escopo da auditoria..."></textarea>
+          <p id="errorAuditMessage" class="field-error hidden text-sm mt-2" aria-live="polite"></p>
         </div>
 
         <div class="flex items-center justify-end gap-3">
@@ -688,6 +697,40 @@
           <button type="submit" class="modal-submit">Enviar mensagem...</button>
         </div>
       </form>
+
+      <!-- Enhanced Success overlay (hidden by default) -->
+      <div id="auditSuccess" class="hidden absolute inset-0 z-20 flex items-center justify-center px-6">
+        <div class="w-full max-w-md bg-gradient-to-b from-[#04120f] via-[#071b14] to-[#071a13] border border-[#113322] rounded-xl p-8 flex flex-col items-center shadow-xl transform scale-95 opacity-0 relative" role="status" aria-live="polite">
+          <button type="button" data-modal-close class="absolute top-3 right-3 text-[#94A3B8] hover:text-white rounded-md focus:outline-none" aria-label="Fechar confirmação">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+          <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-[#064e3b] to-[#02845f] flex items-center justify-center shadow-inner mb-4 animate-success-pop">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" fill="rgba(16,185,129,0.12)" />
+              <path d="M7 12.5l2.5 2.5L17 8" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h4 class="text-lg text-white font-semibold mb-1">A sua mensagem foi enviada com sucesso!</h4>
+          <p class="text-sm text-[#A7B3AE] text-center">Obrigado — em breve entraremos em contato para alinhar os próximos passos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Ferramentas (em desenvolvimento) -->
+  <div id="devModal" class="hidden fixed inset-0 z-50 items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="devModalTitle">
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" data-modal-close></div>
+
+    <div class="relative z-10 w-full max-w-md mx-auto modal-card bg-[#070707] border border-white/5 rounded-xl shadow-2xl p-6 text-center">
+      <button type="button" class="absolute top-4 right-4 text-[#94A3B8] hover:text-white" data-modal-close aria-label="Fechar">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <h3 id="devModalTitle" class="text-xl font-semibold text-white mb-2">Ferramentas</h3>
+      <p class="text-[#94A3B8] text-sm mb-4">Esta página está sendo desenvolvida — volte em breve!</p>
+      <div class="mt-4">
+        <button data-modal-close class="px-4 py-2 rounded-md bg-[#DC2626] hover:bg-[#B91C1C] text-white">Entendi</button>
+      </div>
     </div>
   </div>
 

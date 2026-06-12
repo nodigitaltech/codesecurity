@@ -127,6 +127,13 @@ button, .modal-submit, .bg-[#DC2626]{ font-weight: var(--satoshi-semibold); }
 
 .modal-textarea { min-height: 120px; resize: vertical; }
 
+/* Placeholder styling: slightly more transparent to reduce visual weight */
+.modal-input::placeholder,
+.modal-textarea::placeholder {
+  color: rgba(255,255,255,0.44);
+  opacity: 1; /* ensure consistent across browsers */
+}
+
 /* Focus states: borda mais fina e vermelho escuro, discreto */
 .modal-input:focus,
 .modal-textarea:focus {
@@ -175,3 +182,37 @@ button, .modal-submit, .bg-[#DC2626]{ font-weight: var(--satoshi-semibold); }
 .card-list .vector-title { font-weight: var(--satoshi-medium); font-size: 0.95rem; }
 .card-list .vector-desc { font-weight: var(--satoshi-medium); font-size: 0. ninerem; }
 .card-list li + li { margin-top: 0.5rem; }
+
+/* Modal success message */
+#auditSuccess { display: none; }
+.modal-success-show { display: flex !important; }
+
+.modal-success-show svg { display: block; }
+
+.modal-submit[disabled] { opacity: 0.6; cursor: not-allowed; }
+
+/* Success overlay styles */
+#auditSuccess { display: none; }
+.modal-card { position: relative; }
+#auditSuccess > div { transition: transform 360ms cubic-bezier(.22,.9,.35,1), opacity 260ms ease; }
+.modal-success-show > div { transform: scale(1); opacity: 1; }
+
+@keyframes success-pop {
+  0% { transform: scale(0.6); opacity: 0; }
+  60% { transform: scale(1.06); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.animate-success-pop { animation: success-pop 420ms cubic-bezier(.2,.8,.2,1) both; }
+
+/* Ensure the overlay container becomes visible when shown */
+.modal-success-show { display: flex !important; }
+
+/* Accessibility: focus outline for modal-close buttons */
+[data-modal-close]:focus { outline: 2px solid rgba(255,255,255,0.06); outline-offset: 2px; }
+
+/* Field error styles */
+.field-error { color: #FCA5A5; display: none; }
+.field-error.hidden { display: none; }
+.field-error:not(.hidden) { display: block; }
+
+.modal-input.invalid, .modal-textarea.invalid { border-color: #7f1a1a !important; box-shadow: 0 0 0 6px rgba(220,38,38,0.04); }

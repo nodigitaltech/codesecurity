@@ -18,11 +18,11 @@
         <a href="index.html"><img src="./assets/img/logotipo.png" alt="Code Security" class="h-8 w-auto"></a>
       </div>
       <div class="hidden md:flex items-center gap-8 text-[#94A3B8] text-sm font-medium">
+        <a href="index.html" class="hover:text-white transition-colors">Início</a>
         <a href="index.html#servicos" class="hover:text-white transition-colors">Serviços</a>
         <a href="index.html#como-funciona" class="hover:text-white transition-colors">Como funciona</a>
         <a href="metodologia.html" class="hover:text-white transition-colors">Metodologia</a>
-        <a href="index.html#planos" class="hover:text-white transition-colors">Planos</a>
-        <a href="index.html#faq" class="hover:text-white transition-colors">FAQ</a>
+        <a href="#" data-open-dev class="hover:text-white transition-colors">Ferramentas</a>
       </div>
 
       <div class="hidden md:flex items-center gap-6">
@@ -30,8 +30,8 @@
           <i data-lucide="log-in" class="w-4 h-4"></i>
           Portal do Cliente
         </a>
-        <button id="openAuditBtn" class="bg-[#DC2626] hover:bg-[#B91C1C] text-white px-5 py-2.5 rounded-md text-sm font-medium transition-all transform hover:scale-105 flex items-center gap-2">
-          Solicitar Auditoria
+        <button id="openAuditBtn" data-open-audit data-open-contact class="bg-[#DC2626] hover:bg-[#B91C1C] text-white px-5 py-2.5 rounded-md text-sm font-medium transition-all transform hover:scale-105 flex items-center gap-2">
+          Entrar em contato
           <i data-lucide="shield-check" class="w-4 h-4"></i>
         </button>
       </div>
@@ -168,16 +168,13 @@
           <h4 class="font-medium text-white mb-4">Serviços</h4>
           <ul class="space-y-3 text-sm text-[#94A3B8]">
             <li><a href="index.html#servicos" class="hover:text-[#F87171] transition-colors">Pentest Web</a></li>
-            <li><a href="index.html#planos" class="hover:text-[#F87171] transition-colors">Planos</a></li>
-            <li><a href="index.html#roadmap" class="hover:text-[#F87171] transition-colors">Roadmap</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-medium text-white mb-4">Empresa</h4>
+          <h4 class="font-medium text-white mb-4">Mais sobre</h4>
           <ul class="space-y-3 text-sm text-[#94A3B8]">
-            <li><a href="#" class="hover:text-[#F87171] transition-colors">Sobre</a></li>
-            <li><a href="#" class="hover:text-[#F87171] transition-colors">Blog</a></li>
-            <li><a href="#" class="hover:text-[#F87171] transition-colors">Contato</a></li>
+            <li><a href="https://www.youtube.com/" target="_blank" rel="noopener" class="hover:text-[#F87171] transition-colors">Canal no YouTube</a></li>
+            <li><a href="mailto:contato@codesecurity.com.br" class="hover:text-[#F87171] transition-colors">contato@codesecurity.com.br</a></li>
           </ul>
         </div>
         <div>
@@ -206,26 +203,43 @@
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
       <h3 id="auditModalTitle" class="text-xl font-semibold text-white mb-2">Solicitar Auditoria</h3>
-      <p class="text-[#94A3B8] text-sm mb-4">deixe a sua mensagem que entraremos em contato !</p>
+      <p id="auditModalDesc" class="text-[#94A3B8] text-sm mb-4">Deixe a sua mensagem que entraremos em contato.</p>
 
       <form id="auditForm" action="mailto:andre@codesecurity.com.br" method="post" enctype="text/plain" target="_blank" class="space-y-4" novalidate>
         <div>
-          <label class="text-sm text-[#94A3B8] block mb-1">Nome</label>
-          <input name="Nome" type="text" required class="modal-input" placeholder="Seu nome completo">
+          <label class="text-sm text-[#94A3B8] block mb-1" for="auditName">Nome</label>
+          <input id="auditName" name="Nome" type="text" required class="modal-input" placeholder="Seu nome completo">
         </div>
         <div>
-          <label class="text-sm text-[#94A3B8] block mb-1">E-mail</label>
-          <input name="E-mail" type="email" required class="modal-input" placeholder="seu@exemplo.com">
+          <label class="text-sm text-[#94A3B8] block mb-1" for="auditEmail">E-mail</label>
+          <input id="auditEmail" name="E-mail" type="email" required class="modal-input" placeholder="seu@email.com">
         </div>
         <div>
-          <label class="text-sm text-[#94A3B8] block mb-1">Mensagem</label>
-          <textarea name="Mensagem" required class="modal-textarea" placeholder="Descreva brevemente o escopo da auditoria..."></textarea>
+          <label class="text-sm text-[#94A3B8] block mb-1" for="auditMessage">Mensagem</label>
+          <textarea id="auditMessage" name="Mensagem" required class="modal-textarea" placeholder="Descreva brevemente o escopo da auditoria..."></textarea>
         </div>
         <div class="flex items-center justify-end gap-3">
           <button type="button" data-modal-close class="px-4 py-2 rounded-md border border-white/6 text-[#94A3B8] hover:text-white">Fechar</button>
           <button type="submit" class="modal-submit">Enviar mensagem...</button>
         </div>
       </form>
+    </div>
+  </div>
+
+  <!-- Modal Ferramentas (em desenvolvimento) -->
+  <div id="devModal" class="hidden fixed inset-0 z-50 items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="devModalTitle">
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" data-modal-close></div>
+
+    <div class="relative z-10 w-full max-w-md mx-auto modal-card bg-[#070707] border border-white/5 rounded-xl shadow-2xl p-6 text-center">
+      <button type="button" class="absolute top-4 right-4 text-[#94A3B8] hover:text-white" data-modal-close aria-label="Fechar">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <h3 id="devModalTitle" class="text-xl font-semibold text-white mb-2">Ferramentas</h3>
+      <p class="text-[#94A3B8] text-sm mb-4">Esta página está sendo desenvolvida — volte em breve!</p>
+      <div class="mt-4">
+        <button data-modal-close class="px-4 py-2 rounded-md bg-[#DC2626] hover:bg-[#B91C1C] text-white">Entendi</button>
+      </div>
     </div>
   </div>
 
